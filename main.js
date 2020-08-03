@@ -1,8 +1,8 @@
 
-var mismatchAlert = document.getElementById("mismatchAlert");
-var matchAlert = document.getElementById("matchAlert");
+let mismatchAlert = document.getElementById("mismatchAlert");
+let matchAlert = document.getElementById("matchAlert");
 
-var notify = document.getElementById("notify");
+let notify = document.getElementById("notify");
 function alertRemover(){
     matchAlert.style.display = "none"
     mismatchAlert.style.display = "none"
@@ -17,15 +17,15 @@ function fontAndColorFixer(){
 
 
 
-var pinGeneratorBtn = document.getElementById("pinGeneratorBtn");
-var generatedPinShow = document.getElementById("generatedPinShow");
+let pinGeneratorBtn = document.getElementById("pinGeneratorBtn");
+let generatedPinShow = document.getElementById("generatedPinShow");
 
 pinGeneratorBtn.addEventListener("click", function(){
-    var randomRange = []
-  for(var i=1000; i<9999; i++){
+    let randomRange = []
+  for(let i=1000; i<9999; i++){
       randomRange.push(i);
   }
-   var random = Math.ceil(Math.random()*8999);
+   let random = Math.ceil(Math.random()*8999);
    generatedPinShow.value = randomRange[random];
 
    alertRemover()
@@ -44,7 +44,7 @@ pinGeneratorBtn.addEventListener("click", function(){
 
 
 
-var slicer = document.getElementById("slicer");
+let slicer = document.getElementById("slicer");
 
 slicer.addEventListener("click", function(){
     
@@ -56,7 +56,7 @@ slicer.addEventListener("click", function(){
 })
 
 
-var clear = document.getElementById("clear");
+let clear = document.getElementById("clear");
 
 clear.addEventListener("click",function(){
     confirmationPinShow.value="";
@@ -65,8 +65,8 @@ clear.addEventListener("click",function(){
 })
 
 
-var confirmationPinShow = document.getElementById("confirmationPinShow");
-var confirmationPinSubmit = document.getElementById("confirmationPinSubmit");
+let confirmationPinShow = document.getElementById("confirmationPinShow");
+let confirmationPinSubmit = document.getElementById("confirmationPinSubmit");
 
 confirmationPinSubmit.addEventListener("click", function(){
     if(confirmationPinShow.value.length==4){
@@ -81,8 +81,8 @@ confirmationPinSubmit.addEventListener("click", function(){
         confirmationPinShow.style.fontSize="20px"
     }
 
-    var tryCount = document.getElementById("tryCount");
-    var decrease = parseInt(tryCount.innerText)-1
+    let tryCount = document.getElementById("tryCount");
+    let decrease = parseInt(tryCount.innerText)-1
     tryCount.innerText = decrease;
     if(tryCount.innerText==0){
         if(generatedPinShow.value == confirmationPinShow.value){
