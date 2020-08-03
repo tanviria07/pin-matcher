@@ -1,22 +1,13 @@
 *{
     box-sizing: border-box;
 }
-
-
-
-
 body {
     background: #10101B;
     height: 100vh;
 }
-
-
-
 .container {
     margin-top: 30px;
 }
-
-
 
 .half-width {
     height: 570px;
@@ -24,9 +15,6 @@ body {
     padding: 30px;
     text-align: center;
 }
-
-
-
 .generate-btn{
     margin-top: 140px;
     width: 180px;
@@ -39,17 +27,10 @@ body {
     font-size: 20px;
     text-align: center;
 }
-
-
-
 .generate-btn:focus{
     outline: none;
     box-shadow: none;
 }
-
-
-
-
 
 input[type='text']{
     background-color: #3D4153;
@@ -66,32 +47,20 @@ input[type='text']{
     
 }
 
-
-
-
-#PinShow{
+#confirmationPinShow{
     width:310px;
     text-align:center;
     
 }
-
-
 
 input[type='text']:focus {
     background-color: #3D4153;
     color: #fff;
     font-size: 20px;
 }
-
-
-
 .numbers {
     margin: 30px 0;
 }
-
-
-
-
 
 .calc-typed {
 margin-top: 20px;
@@ -100,15 +69,9 @@ text-align: right;
 color: #fff;
 }
 
-
-
-
 .calc-button-row {
 width: 100%;
 }
-
-
-
 
 .button {
 width: 20%;
@@ -124,19 +87,9 @@ margin-right: -4px;
 border-radius: 10px;
 cursor: pointer;
 }
-
-
-
-
-
 .blink-me {
 color: #E0B612;
 }
-
-
-
-
-
 .submit-btn {
     border: none;
     margin-top: 20px;
@@ -146,11 +99,7 @@ color: #E0B612;
     background: #495BC3;
     color: #fff;
 }
-
-
-
-
-.check {
+.notify {
     color: #fff;
     text-align: center;
     margin: 0 auto;
@@ -159,36 +108,17 @@ color: #E0B612;
     border-radius: 15px;
     padding: 5px 20px;
 }
-
-
-
-
-
-.check-section{
+.notify-section{
     width: 35%;
     margin: 0 auto;
 }
-
-
-
-
-
 .action-left {
     color: #FF3C5F;
     margin-top: 10px;
 }
-
-
-
-
-#matching{
+#matchAlert{
     display:none;
 }
-
-
-
-
-
-#mismatching{
+#mismatchAlert{
     display:none;
 }

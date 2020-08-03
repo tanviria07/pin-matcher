@@ -1,20 +1,17 @@
 
-var mismatching = document.getElementById("mismatching");
-var matching = document.getElementById("matching");
+var mismatchAlert = document.getElementById("mismatchAlert");
+var matchAlert = document.getElementById("matchAlert");
 
-var notify = document.getElementById("check");
-function callDecliner(){
-    matching.style.display = "none"
-    mismatching.style.display = "none"
+var notify = document.getElementById("notify");
+function alertRemover(){
+    matchAlert.style.display = "none"
+    mismatchAlert.style.display = "none"
     
 }
 
-
-
-
 function fontAndColorFixer(){
-    PinShow.style.color = "white";
-    PinShow.style.fontSize="60px"
+    confirmationPinShow.style.color = "white";
+    confirmationPinShow.style.fontSize="40px"
 }
 
 
@@ -31,17 +28,18 @@ pinGeneratorBtn.addEventListener("click", function(){
    var random = Math.ceil(Math.random()*8999);
    generatedPinShow.value = randomRange[random];
 
-   callDecliner()
+   alertRemover()
    fontAndColorFixer()
-   PinShow.value=""
-   PinSubmit.disabled=false;
+   confirmationPinShow.value=""
+   confirmationPinSubmit.disabled=false;
    tryCount.innerText=3;
 
-   PinSubmit.style.backgroundColor="#495BC3";
-    PinSubmit.style.color="white";
+   confirmationPinSubmit.style.backgroundColor="#495BC3";
+    confirmationPinSubmit.style.color="white";
    
 }
 )
+
 
 
 
@@ -50,9 +48,9 @@ var slicer = document.getElementById("slicer");
 
 slicer.addEventListener("click", function(){
     
-   PinShow.value = PinShow.value.slice(0,-1);
-   if(PinShow.value.length<4){
-    callDecliner()
+   confirmationPinShow.value = confirmationPinShow.value.slice(0,-1);
+   if(confirmationPinShow.value.length<4){
+       alertRemover()
        
    }
 })
@@ -61,47 +59,46 @@ slicer.addEventListener("click", function(){
 var clear = document.getElementById("clear");
 
 clear.addEventListener("click",function(){
-    PinShow.value="";
-    callDecliner()
+    confirmationPinShow.value="";
+    alertRemover()
     fontAndColorFixer()
 })
 
 
-var PinShow = document.getElementById("PinShow");
-var PinSubmit = document.getElementById("PinSubmit");
+var confirmationPinShow = document.getElementById("confirmationPinShow");
+var confirmationPinSubmit = document.getElementById("confirmationPinSubmit");
 
-PinSubmit.addEventListener("click", function(){
-    if(PinShow.value.length==4){
-        if(PinShow.value==generatedPinShow.value){
-             matching.style.display = "block";
+confirmationPinSubmit.addEventListener("click", function(){
+    if(confirmationPinShow.value.length==4){
+        if(confirmationPinShow.value==generatedPinShow.value){
+             matchAlert.style.display = "block";
         }else{
-             mismatching.style.display = "block";
+             mismatchAlert.style.display = "block";
         }
     }else{
-        PinShow.value="input 4 digit number"
-        PinShow.style.color = "red";
-        PinShow.style.fontSize="20px"
+        confirmationPinShow.value="input 4 digit number"
+        confirmationPinShow.style.color = "red";
+        confirmationPinShow.style.fontSize="20px"
     }
 
     var tryCount = document.getElementById("tryCount");
     var decrease = parseInt(tryCount.innerText)-1
     tryCount.innerText = decrease;
     if(tryCount.innerText==0){
-        if(generatedPinShow.value == PinShow.value){
+        if(generatedPinShow.value == confirmationPinShow.value){
             tryCount.innerText=3;
         }else{
-            PinSubmit.disabled=true;
-            PinSubmit.style.backgroundColor="grey";
-            PinSubmit.style.color="white";
+            confirmationPinSubmit.disabled=true;
+            confirmationPinSubmit.style.backgroundColor="grey";
+            confirmationPinSubmit.style.color="white";
         }
     }
     
 })
 
 
-
-PinShow.addEventListener("click",function(){
-    PinShow.value = "";
+confirmationPinShow.addEventListener("click",function(){
+    confirmationPinShow.value = "";
     fontAndColorFixer()
-    callDecliner()
+    alertRemover()
 })
